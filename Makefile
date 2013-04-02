@@ -14,7 +14,7 @@ HAVE_CFG80211 := 0
 endif
 endif
 
-INC_PRE := drivers/staging/prima
+INC_PRE := $(src)
 
 ############ BAP ############
 BAP_DIR :=	CORE/BAP
