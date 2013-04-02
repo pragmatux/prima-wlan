@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+ifndef KERNEL_TREE
+ $(error You must set KERNEL_TREE to the root of your kernel source.)
+endif
+
+%:
+	dh $@
+
+CROSS=ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	MAKEFLAGS += -j$(NUMJOBS)
+endif
+
+override_dh_auto_build:
+	test -d $(KERNEL_TREE)
+	$(MAKE) $(CROSS) -C $(KERNEL_TREE) M=$(shell pwd) CONFIG_PRIMA_WLAN=m

@@ -1,0 +1,14 @@
+Source: prima-wlan
+Section: kernel
+Priority: extra
+Maintainer: Ryan Kuester <rkuester@insymbols.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Vcs-Git: http://git.pragmatux.org/prima-wlan.git
+Vcs-Browser: http://git.pragmatux.org/prima-wlan.git
+
+Package: prima-wlan
+Architecture: any
+Depends: linux-db8060a, ${misc:Depends}
+Description: Prima WLAN driver
+ This is a driver and firmware and firmware for the Prima WLAN controller.
