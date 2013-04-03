@@ -1,2 +1,3 @@
 prima_wlan.ko /lib/modules/3.0.21-perf+/kernel/extra
+prima-wlan.conf /etc/modprobe.d
 firmware_bin/* /lib/firmware/wlan/prima
